@@ -1,0 +1,15 @@
+{% extends 'Main/base.html' %}
+
+{% block title %}
+    Inicio    
+{% endblock title %}
+
+{% block content_title %}
+    Blog sobre Python    
+{% endblock content_title %}
+
+{% block content %}
+    <button>
+        <a href="{% url 'blog:post_list' %}">Ingresar</a>
+    </button>
+{% endblock content %}

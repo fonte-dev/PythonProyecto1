@@ -1,0 +1,18 @@
+{% extends 'Main/base.html' %}
+
+{% block title %}Publicar{% endblock title %}
+{% block content_title %}
+    Formulario para crear una Publicación
+{% endblock content_title %}
+
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Enviar">
+        <a href="{% url 'blog:post_list' %}">Cancelar</a>
+    </form>
+{% endblock content %}
