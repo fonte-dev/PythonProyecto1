@@ -2,7 +2,11 @@
 
 {% block title %}Publicar{% endblock title %}
 {% block content_title %}
-    Formulario para crear una Publicación
+    {% if form.instance.pk %}
+        Edición de una publicación
+    {% else %}
+        Creación de una Publicación
+    {% endif %}
 {% endblock content_title %}
 
 

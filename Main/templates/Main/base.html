@@ -20,6 +20,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'blog:post_list' %}">Blog</a>
                 </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Main:editar_perfil' %}">
+                        {% if user.avatar.imagen %}
+                            <img src="{{ user.avatar.imagen.url }}" alt="" class="rounded-circle" width="30" height="30">
+                        {% endif %} {{ user.username }}
+                    </a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>

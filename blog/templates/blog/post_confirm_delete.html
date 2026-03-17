@@ -1,0 +1,18 @@
+{% extends 'Main/base.html' %}
+
+{% block title %}Eliminar{% endblock title %}
+{% block content_title %}
+    Eliminar una Publicación
+{% endblock content_title %}
+
+
+{% block content %}
+    <p class="fs-5">¿Está seguro de que desea eliminar la publicación? {{ object }}</p>
+    <form method="post">
+        {% csrf_token %}
+            <button type="submit">Confirmar</button>
+    </form>
+    <div>
+        <a href="{% url 'blog:post_list' %}">Volver</a>
+    </div>
+{% endblock content %}
